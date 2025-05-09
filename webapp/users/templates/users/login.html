@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+    <p>Already logged in</p>
+{% else %}
+<div class="container text-center mt-5">
+        <div class="card pt-5">
+        <form action="/users/login/" method="post">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit" class="primary">submit</button>
+            <p>No account? <a href="{% url 'users:register' %}">Create one</a></p>
+        </form>
+    </div>
+    </div>
+{% endif %}
+{% endblock %}

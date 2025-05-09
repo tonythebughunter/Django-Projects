@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="text-center">Our Students</h2>
+    {% for student in students %}
+        <p>{{ student.name }}</p></br>
+    {% empty %}
+        <p>No Students online</p>
+    {% endfor %}
+{% endblock %}

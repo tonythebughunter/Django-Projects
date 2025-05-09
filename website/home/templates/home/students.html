@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for student in students %}
+    <div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ student.name }}</h5>
+                      <p class="card-text">{{ student.fbal }}</p>
+                      <a href="" class="btn btn-primary">Edit</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    {% empty %}
+    No students available
+    {% endfor %}
+{% endblock %}
